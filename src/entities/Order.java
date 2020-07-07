@@ -1,12 +1,13 @@
 package entities;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import entities.enums.OrderStatus;
 
 public class Order {
-	private Date moment = new Date(0);
+	private Date date = new Date();
 	private List<OrderStatus> orders = new ArrayList<>();
 }
