@@ -9,5 +9,6 @@ import entities.enums.OrderStatus;
 
 public class Order {
 	private Date date = new Date();
-	private List<OrderStatus> orders = new ArrayList<>();
+	private OrderStatus status;
+	private List<OrderItem> itens = new ArrayList<>();
 }
