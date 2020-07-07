@@ -51,4 +51,7 @@ public class Order {
 		return itens;
 	}
 	
+	public void addItem(OrderItem item) {
+		itens.add(item);
+	}
 }
