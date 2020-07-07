@@ -10,5 +10,6 @@ import entities.enums.OrderStatus;
 public class Order {
 	private Date date = new Date();
 	private OrderStatus status;
+	private Client client;
 	private List<OrderItem> itens = new ArrayList<>();
 }
