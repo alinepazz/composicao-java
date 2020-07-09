@@ -1,6 +1,5 @@
 package aplication;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,6 +52,8 @@ public class Program {
 			
 			OrderItem orderItem = new OrderItem(quantidade, price, new Product(nameProduto, price));
 			Order order = new Order(date, OrderStatus.valueOf(status), new Client(name, email, birth));
+			
+			System.out.println(order);
 		}
 		
 		

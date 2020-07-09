@@ -55,4 +55,17 @@ public class Order {
 		itens.remove(item);
 	}
 	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("ORDER SUMMARY:");
+		sb.append("Order moment: " + date);
+		sb.append("Order status: " + status);
+		sb.append("Client: " + client.getName() + "(" + client.getBirthDate()+ ")" +"-"+ client.getEmail());
+		sb.append("Order items:");
+		for (OrderItem c : itens) {
+			sb.append(c.getProduct() + "," + "%.2f" + c.getPrice() + c.getQuantity() + "," + c.subTotal());
+		}
+		
+		return sb.toString();
+	}
 }
