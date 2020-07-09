@@ -21,13 +21,11 @@ public class Program {
 		
 		Date date = new Date();
 		
-		DateFormat formato = new SimpleDateFormat("HH:mm:ss.SSS");
-		String formattedDate = formato.format(date);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
-		System.out.print("Enter cliente data:");
-		System.out.println("Name: ");
+		System.out.println("Enter cliente data:");
+		System.out.print("Name: ");
 		String name = sc.nextLine();
 		System.out.print("Email: ");
 		String email = sc.nextLine();
@@ -37,13 +35,15 @@ public class Program {
 		Client client = new Client(name, email, birth);
 		
 		System.out.println("Enter order data:");
+		sc.nextLine();
 		System.out.print("Status: ");
 		String status = sc.nextLine();
 		System.out.print("How many items to this order? ");
 		int intem = sc.nextInt();
 		
 		for(int i=1; i<=intem; i++) {
-			System.out.println("Enter "+ "#"+i + "item data:");
+			System.out.println("Enter "+ "#"+i + " item data:");
+			sc.nextLine();
 			System.out.print("Product name: ");
 			String nameProduto = sc.nextLine();
 			System.out.print("Product price: ");
