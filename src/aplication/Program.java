@@ -1,5 +1,6 @@
 package aplication;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +18,11 @@ public class Program {
 	public static void main(String[] args) throws ParseException {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
+		
+		Date date = new Date();
+		
+		DateFormat formato = new SimpleDateFormat("HH:mm:ss.SSS");
+		String formattedDate = formato.format(date);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
@@ -46,7 +52,7 @@ public class Program {
 			int quantidade = sc.nextInt();
 			
 			OrderItem orderItem = new OrderItem(quantidade, price, new Product(nameProduto, price));
-			Order order = new Order(birth, OrderStatus.valueOf(status), new Client(name, email, birth));
+			Order order = new Order(date, OrderStatus.valueOf(status), new Client(name, email, birth));
 		}
 		
 		
