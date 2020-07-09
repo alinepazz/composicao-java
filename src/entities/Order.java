@@ -58,9 +58,11 @@ public class Order {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("ORDER SUMMARY:");
-		sb.append("Order moment: " + date);
-		sb.append("Order status: " + status);
-		sb.append("Client: " + client.getName() + "(" + client.getBirthDate()+ ")" +"-"+ client.getEmail());
+		sb.append("Order moment");
+		sb.append( date);
+		sb.append("Order status: ");
+		sb.append(date);
+		sb.append("Client: " + client.getName() + "(" + client.getBirthDate()+ ") " +" - "+ client.getEmail());
 		sb.append("Order items:");
 		for (OrderItem c : itens) {
 			sb.append(c.getProduct() + "," + "%.2f" + c.getPrice() + c.getQuantity() + "," + c.subTotal());
