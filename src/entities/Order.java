@@ -14,14 +14,11 @@ public class Order {
 	private Client client;
 	private List<OrderItem> itens = new ArrayList<>();
 	
-	public Order() {
-		
-	}
-	public Order(Date date, OrderStatus status, Client client, List<OrderItem> itens) {
+		public Order(Date date, OrderStatus status, Client client) {
 		this.date = date;
 		this.status = status;
 		this.client = client;
-		this.itens = itens;
+		
 	}
 
 	public Date getDate() {

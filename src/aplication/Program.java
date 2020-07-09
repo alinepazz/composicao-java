@@ -7,8 +7,10 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Client;
+import entities.Order;
 import entities.OrderItem;
 import entities.Product;
+import entities.enums.OrderStatus;
 
 public class Program {
 
@@ -44,7 +46,7 @@ public class Program {
 			int quantidade = sc.nextInt();
 			
 			OrderItem orderItem = new OrderItem(quantidade, price, new Product(nameProduto, price));
-			
+			Order order = new Order(birth, OrderStatus.valueOf(status), new Client(name, email, birth));
 		}
 		
 		
