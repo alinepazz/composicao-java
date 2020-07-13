@@ -64,11 +64,13 @@ public class Order {
 		sb.append(sdf.format(date) + "\n");
 		sb.append("Order status: " + "\n");
 		sb.append(status + "\n");
-		sb.append("Client: " + client.getName() + "(" + client.getBirthDate()+ ") " +" - "+ client.getEmail() + "\n");
+		sb.append("Client: " + client.getName() + "(" + client.getBirthDate()+ ")" +" - "+ client.getEmail() + "\n");
 		sb.append("Order items:" + "\n");
 		for (OrderItem c : itens) {
-			sb.append(c.getProduct() + "," + "%.2f" + c.getPrice() + c.getQuantity() + ", " + c.subTotal());
+			sb.append(c.getProduct() + ", " + c.getPrice() + ", " + c.getQuantity() + ", " + c.subTotal() + "\n");
+			
 		}
+		
 		
 		return sb.toString();
 	}

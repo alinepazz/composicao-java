@@ -31,7 +31,7 @@ public class Program {
 		System.out.print("Birth date (DD/MM/YYYY): ");
 		Date birth = sdf.parse(sc.next());
 		
-		Client client = new Client(name, email, birth);
+		
 		
 		System.out.println("Enter order data:");
 		sc.nextLine();
@@ -39,6 +39,7 @@ public class Program {
 		String status = sc.nextLine();
 		System.out.print("How many items to this order? ");
 		int intem = sc.nextInt();
+		Order order = new Order(date, OrderStatus.valueOf(status), new Client(name, email, birth));
 		
 		for(int i=1; i<=intem; i++) {
 			System.out.println("Enter "+ "#"+i + " item data:");
@@ -50,15 +51,12 @@ public class Program {
 			System.out.print("Quantity: ");
 			int quantidade = sc.nextInt();
 			
-			OrderItem orderItem = new OrderItem(quantidade, price, new Product(nameProduto, price));
-			Order order = new Order(date, OrderStatus.valueOf(status), new Client(name, email, birth));
+            OrderItem orderItem = new OrderItem(quantidade, price, new Product(nameProduto, price));
 			order.addItem(orderItem);
+			
+		}	
 			System.out.println(order);
-		}
-		
-		
-		
-		
+
 		sc.close();
 
 	}
