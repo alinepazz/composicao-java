@@ -52,7 +52,7 @@ public class Program {
 			
 			OrderItem orderItem = new OrderItem(quantidade, price, new Product(nameProduto, price));
 			Order order = new Order(date, OrderStatus.valueOf(status), new Client(name, email, birth));
-			
+			order.addItem(orderItem);
 			System.out.println(order);
 		}
 		
