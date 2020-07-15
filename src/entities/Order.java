@@ -56,7 +56,15 @@ public class Order {
 	public void removeItem(OrderItem item) {
 		itens.remove(item);
 	}
+	public double total() {
+		double sum = 0.0;
+		for(OrderItem iten : itens) {
+			sum += iten.getPrice();
+		}
+		return sum;
+	}
 	
+		@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("ORDER SUMMARY:" + "\n");
@@ -64,14 +72,15 @@ public class Order {
 		sb.append(sdf.format(date) + "\n");
 		sb.append("Order status: " + "\n");
 		sb.append(status + "\n");
-		sb.append("Client: " + client.getName() + "(" + client.getBirthDate()+ ")" +" - "+ client.getEmail() + "\n");
-		sb.append("Order items:" + "\n");
-		for (OrderItem c : itens) {
-			sb.append(c.getProduct() + ", " + c.getPrice() + ", " + c.getQuantity() + ", " + c.subTotal() + "\n");
+		sb.append("Client: " );
+		sb.append(client  + "\n" );
+		sb.append("Order items:\n");
+		for (OrderItem item : itens) {
+			sb.append(item + "\n");
 			
 		}
-		
-		
+		sb.append("Total price: $");
+		sb.append(String.format("%.2f", total()));
 		return sb.toString();
 	}
 }
